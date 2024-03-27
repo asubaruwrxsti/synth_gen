@@ -1,3 +1,8 @@
+WITH column_lengths (column_name, character_max_length) AS (
+  SELECT column_name, CHARACTER_MAXIMUM_LENGTH
+  FROM information_schema.columns
+  WHERE table_name = 'agente'
+)
 SELECT
     json_build_object(
         'type', 'array',
@@ -9,21 +14,33 @@ SELECT
                 _column_name_,
                 CASE
                     WHEN column_type LIKE 'bool%' THEN json_build_object('type', 'bool', 'frequency', 0.5)
+                    WHEN column_type LIKE '%int%' THEN json_build_object('type', 'number', 'range', json_build_object('low', 1, 'high', 100))
+                    WHEN column_type LIKE 'character%' THEN json_build_object(
+                        'type', 'string',
+                        'truncated', json_build_object(
+                            'content', json_build_object('type', 'string', 'pattern','[a-zA-Z0-9]{0, 255}'),
+                            'length', (
+                                SELECT CHARACTER_MAXIMUM_LENGTH
+                                FROM information_schema.columns
+                                WHERE table_name =  'agente'
+                                AND column_name = _column_name_
+                            )
+                        )
+                    )
                     ELSE json_build_object(
                         'type', CASE
-                            WHEN column_type LIKE 'numeric%' THEN 'number'
-                            WHEN column_type LIKE 'varchar%' THEN 'string'
+                            WHEN column_type LIKE '%int%' THEN 'number'
+                            WHEN column_type LIKE 'character%' THEN 'string'
                             WHEN column_type LIKE 'text%' THEN 'string'
-                            WHEN column_type LIKE 'int%' THEN 'random_number'
+                            WHEN column_type LIKE 'bool%' THEN 'boolean'
                             WHEN column_type IS NULL THEN NULL
                             ELSE 'string'
                         END,
                         'faker', json_build_object('generator', CASE
-                            WHEN column_type LIKE 'numeric%' THEN 'random_number'
-                            WHEN column_type LIKE 'varchar%' THEN 'buzzword'
+                            WHEN column_type LIKE '%int%' THEN 'random_number'
+                            WHEN column_type LIKE 'character%' THEN 'buzzword'
                             WHEN column_type LIKE 'bool%' THEN 'boolean'
-							WHEN column_type LIKE 'text%' THEN 'buzzword'
-							WHEN column_type LIKE 'int%' THEN 'random_number'
+                            WHEN column_type LIKE 'text%' THEN 'buzzword'
                             WHEN column_type IS NULL THEN NULL
                             ELSE 'buzzword'
                         END)

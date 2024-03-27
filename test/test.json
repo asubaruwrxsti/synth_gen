@@ -5,74 +5,110 @@
 			"type": "bool"
 		},
 		"cap": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 5
 			},
 			"type": "string"
 		},
 		"codice": {
-			"faker": {
-				"generator": "buzzword"
-			},
-			"type": "string"
-		},
-		"codice_deposito": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 20
 			},
 			"type": "string"
 		},
 		"codice_fiscale": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 16
 			},
 			"type": "string"
 		},
 		"codice_nazione": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 2
 			},
 			"type": "string"
 		},
 		"codice_provincia": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 4
 			},
 			"type": "string"
 		},
 		"email": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 100
 			},
 			"type": "string"
 		},
-		"id_fornitore": {
-			"faker": {
-				"generator": "buzzword"
+		"id_agenzia": {
+			"range": {
+				"high": 100,
+				"low": 1
 			},
-			"type": "string"
+			"type": "number"
 		},
-		"id_raggruppamento_zona_agenzia": {
-			"faker": {
-				"generator": "buzzword"
+		"id_raggruppamento_zona_agente": {
+			"range": {
+				"high": 100,
+				"low": 1
 			},
-			"type": "string"
+			"type": "number"
 		},
-		"id_tipo_agenzia": {
-			"faker": {
-				"generator": "buzzword"
+		"id_struttura_vendite": {
+			"range": {
+				"high": 100,
+				"low": 1
 			},
-			"type": "string"
+			"type": "number"
+		},
+		"id_tipo_agente": {
+			"range": {
+				"high": 100,
+				"low": 1
+			},
+			"type": "number"
 		},
 		"indirizzo": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 100
 			},
 			"type": "string"
 		},
 		"localita": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 100
 			},
 			"type": "string"
 		},
@@ -83,26 +119,42 @@
 			"type": "string"
 		},
 		"numero_civico": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 10
 			},
 			"type": "string"
 		},
 		"partita_iva": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 13
 			},
 			"type": "string"
 		},
 		"ragione_sociale": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 100
 			},
 			"type": "string"
 		},
 		"telefono": {
-			"faker": {
-				"generator": "buzzword"
+			"truncated": {
+				"content": {
+					"pattern": "[a-zA-Z0-9]{0, 255}",
+					"type": "string"
+				},
+				"length": 16
 			},
 			"type": "string"
 		},
