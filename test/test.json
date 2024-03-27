@@ -1,0 +1,116 @@
+{
+	"content": {
+		"annullato": {
+			"frequency": 0.5,
+			"type": "bool"
+		},
+		"cap": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"codice": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"codice_deposito": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"codice_fiscale": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"codice_nazione": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"codice_provincia": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"email": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"id_fornitore": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"id_raggruppamento_zona_agenzia": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"id_tipo_agenzia": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"indirizzo": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"localita": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"note": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"numero_civico": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"partita_iva": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"ragione_sociale": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"telefono": {
+			"faker": {
+				"generator": "buzzword"
+			},
+			"type": "string"
+		},
+		"type": "object"
+	},
+	"length": {
+		"constant": 1,
+		"type": "number"
+	},
+	"type": "array"
+}
