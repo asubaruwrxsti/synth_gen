@@ -27,6 +27,8 @@ SELECT
                             )
                         )
                     )
+					WHEN column_type LIKE 'date%' THEN json_build_object('type', 'date_time', 'format', '%Y-%m-%d', 'begin' , '2024-01-01', 'end', '2025-12-31')
+					WHEN column_type IS NULL THEN NULL 
                     ELSE json_build_object(
                         'type', CASE
                             WHEN column_type LIKE '%int%' THEN 'number'
