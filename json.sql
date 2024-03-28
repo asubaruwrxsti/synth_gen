@@ -32,7 +32,10 @@ SELECT
                 END
                 || 
 				CASE
-					WHEN fk_definition IS NOT NULL THEN jsonb_build_object('ref', regexp_replace(fk_definition, 'FOREIGN KEY \((.*)\) REFERENCES (.*)\((.*)\)', '\2.\3'))
+					WHEN fk_definition IS NOT NULL THEN jsonb_build_object(
+						'type', 'same_as',
+						'ref', regexp_replace(fk_definition, 'FOREIGN KEY \((.*)\) REFERENCES (.*)\((.*)\)', '\2.\3')
+					)
 					ELSE '{}'
 				END
             )::jsonb
