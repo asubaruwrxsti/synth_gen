@@ -63,7 +63,7 @@ func main() {
 			}
 
 			// Create a directory for the table
-			err = os.MkdirAll(filepath.Join("./"+schemaName, tableName), os.ModePerm)
+			err = os.MkdirAll(filepath.Join("./"+schemaName), os.ModePerm)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -85,7 +85,7 @@ func main() {
 			}
 
 			// Save the output of the query as a JSON file in the directory
-			file, err := os.Create(filepath.Join("./"+schemaName, tableName, tableName+".json"))
+			file, err := os.Create(filepath.Join("./"+schemaName, tableName+".json"))
 			if err != nil {
 				log.Fatal(err)
 			}
